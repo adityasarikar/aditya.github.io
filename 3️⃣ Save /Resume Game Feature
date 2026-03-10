@@ -1,0 +1,10 @@
+function saveGame(position){
+
+fetch("/save_game",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({position:position})
+});
+
+alert("Game Saved");
+}
