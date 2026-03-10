@@ -1,0 +1,9 @@
+function deleteGame(){
+
+fetch("/delete_game",{
+method:"POST"
+});
+
+alert("Saved Game Deleted");
+
+}
