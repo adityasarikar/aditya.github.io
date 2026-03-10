@@ -1,0 +1,11 @@
+<button onclick="rollDice()">🎲 Roll Dice</button>
+
+<button onclick="saveGame(playerPosition)">💾 Save</button>
+
+<button onclick="resumeGame()">▶ Resume</button>
+
+<button onclick="deleteGame()">🗑 Delete</button>
+
+<button onclick="buyItem('Extra Dice',20)">🛒 Buy Extra Dice</button>
+
+<p id="points">Reward Points: 0</p>
