@@ -1,0 +1,12 @@
+function resumeGame(){
+
+fetch("/resume_game")
+.then(res=>res.json())
+.then(data=>{
+playerPosition=data.position;
+
+document.getElementById("position").innerText =
+"Player Position: "+playerPosition;
+});
+
+}
