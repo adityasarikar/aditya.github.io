@@ -1,0 +1,11 @@
+@app.route("/delete_game",methods=["POST"])
+def delete():
+
+ conn=sqlite3.connect("game.db")
+ c=conn.cursor()
+
+ c.execute("DELETE FROM saved_games")
+
+ conn.commit()
+
+ return jsonify({"status":"deleted"})
