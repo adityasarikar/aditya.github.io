@@ -1,0 +1,10 @@
+let rewardPoints = 0;
+
+function winGame() {
+    rewardPoints += 50;
+
+    document.getElementById("points").innerText =
+    "Reward Points: " + rewardPoints;
+
+    alert("🎉 You won! +50 points");
+}
