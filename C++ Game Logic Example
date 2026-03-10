@@ -1,0 +1,25 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+
+    map<int,int> snakes;
+    snakes[99] = 54;
+    snakes[70] = 55;
+
+    int position = 1;
+    int dice;
+
+    cout << "Roll dice: ";
+    cin >> dice;
+
+    position += dice;
+
+    if(snakes[position])
+        position = snakes[position];
+
+    cout << "Player position: " << position;
+
+    return 0;
+}
