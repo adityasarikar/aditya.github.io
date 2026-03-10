@@ -1,0 +1,53 @@
+let playerPosition = 1;
+let rewardPoints = 0;
+
+const snakes = {16:6, 48:26, 79:19, 93:68};
+const ladders = {3:22, 8:30, 28:84, 58:77};
+
+function rollDice(){
+
+    const dice = Math.floor(Math.random()*6)+1;
+
+    document.getElementById("dice").textContent="Dice: "+dice;
+
+    let newPos = playerPosition + dice;
+
+    if(newPos<=100){
+        playerPosition = newPos;
+    }
+
+    checkBoard();
+    updateUI();
+}
+
+function checkBoard(){
+
+    if(snakes[playerPosition]){
+        alert("🐍 Snake! Down to "+snakes[playerPosition]);
+        playerPosition = snakes[playerPosition];
+    }
+
+    if(ladders[playerPosition]){
+        alert("🪜 Ladder! Up to "+ladders[playerPosition]);
+        playerPosition = ladders[playerPosition];
+    }
+
+    if(playerPosition===100){
+        rewardPoints+=50;
+        alert("🎉 You Win! +50 Points");
+        resetGame();
+    }
+}
+
+function updateUI(){
+
+    document.getElementById("position").textContent =
+    "Position: "+playerPosition;
+
+    document.getElementById("points").textContent =
+    "Points: "+rewardPoints;
+}
+
+function resetGame(){
+    playerPosition=1;
+}
