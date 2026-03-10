@@ -1,0 +1,10 @@
+@app.route("/resume_game")
+def resume():
+
+ conn=sqlite3.connect("game.db")
+ c=conn.cursor()
+
+ c.execute("SELECT position FROM saved_games ORDER BY id DESC LIMIT 1")
+ data=c.fetchone()
+
+ return jsonify({"position":data[0]})
