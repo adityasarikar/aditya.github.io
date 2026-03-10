@@ -1,0 +1,15 @@
+function buyItem(item,cost){
+
+if(rewardPoints>=cost){
+
+rewardPoints-=cost;
+
+alert("Purchased "+item);
+
+}else{
+
+alert("Not enough points");
+
+}
+
+}
