@@ -1,0 +1,25 @@
+function saveGame(){
+
+localStorage.setItem("position",playerPosition);
+localStorage.setItem("points",rewardPoints);
+
+alert("Game Saved");
+}
+
+function resumeGame(){
+
+playerPosition=parseInt(localStorage.getItem("position")) || 1;
+rewardPoints=parseInt(localStorage.getItem("points")) || 0;
+
+updateUI();
+
+}
+
+function deleteGame(){
+
+localStorage.removeItem("position");
+localStorage.removeItem("points");
+
+alert("Saved Game Deleted");
+
+}
