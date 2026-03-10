@@ -1,0 +1,18 @@
+from flask import Flask,request,jsonify
+import sqlite3
+
+app = Flask(__name__)
+
+@app.route("/save_game",methods=["POST"])
+def save_game():
+
+ data=request.json
+ position=data["position"]
+
+ conn=sqlite3.connect("game.db")
+ c=conn.cursor()
+
+ c.execute("INSERT INTO saved_games(position) VALUES (?)",(position,))
+ conn.commit()
+
+ return jsonify({"status":"saved"})
